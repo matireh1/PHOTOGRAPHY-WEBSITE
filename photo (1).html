@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adnan Fazal Photography | Official</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#fdfdfd;
+      color:#333;
+    }
+
+    /* Navbar */
+
+    nav{
+      width:100%;
+      padding:15px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.97);
+      box-shadow:0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    nav h1{
+      font-size:22px;
+      color:#ff7b00;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#444;
+      font-size:15px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ff7b00;
+    }
+
+    /* Hero Section */
+
+    .hero{
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-box{
+      max-width:900px;
+    }
+
+    .hero h2{
+      font-size:50px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .hero button{
+      padding:15px 40px;
+      background:#ff7b00;
+      color:white;
+      border:none;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .hero button:hover{
+      background:white;
+      color:#ff7b00;
+    }
+
+    /* Sections */
+
+    section{
+      padding:100px 60px;
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:36px;
+      margin-bottom:50px;
+      color:#222;
+      text-transform:uppercase;
+    }
+
+    /* Services */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .service-card{
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+      border:1px solid #eee;
+      transition:0.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-5px);
+      border-color:#ff7b00;
+    }
+
+    .service-card i{
+      font-size:40px;
+      color:#ff7b00;
+      margin-bottom:15px;
+    }
+
+    .service-card h4{
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .service-card p{
+      font-size:14px;
+      color:#777;
+    }
+
+    /* Pricing */
+
+    .pricing-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .package-card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+      border:1px solid #eee;
+    }
+
+    .package-card h3{
+      color:#ff7b00;
+      margin-bottom:15px;
+    }
+
+    .price-tag{
+      font-size:20px;
+      font-weight:bold;
+      display:block;
+      margin-bottom:20px;
+    }
+
+    .package-details{
+      list-style:none;
+      text-align:left;
+    }
+
+    .package-details li{
+      padding:8px 0;
+      border-bottom:1px solid #f3f3f3;
+      font-size:14px;
+    }
+
+    .package-details i{
+      color:#ff7b00;
+      margin-right:8px;
+    }
+
+    /* Videos */
+
+    .video-container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
+    }
+
+    .video-wrapper{
+      flex:1;
+      min-width:320px;
+      max-width:550px;
+    }
+
+    video{
+      width:100%;
+      border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Gallery */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:15px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      border-radius:8px;
+    }
+
+    /* Contact */
+
+    .contact-section{
+      background:#1a1a1a;
+      color:white;
+    }
+
+    .contact-info{
+      margin-bottom:30px;
+      font-size:18px;
+    }
+
+    .contact-info p{
+      margin:15px 0;
+    }
+
+    .contact-info i{
+      color:#ff7b00;
+      margin-right:10px;
+    }
+
+    .social-links a{
+      margin:0 20px;
+      font-size:40px;
+      text-decoration:none;
+    }
+
+    .instagram{
+      color:#ff7b00;
+    }
+
+    .facebook{
+      color:#1877f2;
+    }
+
+    /* Footer */
+
+    footer{
+      background:#111;
+      color:#666;
+      padding:25px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        padding:15px 20px;
+      }
+
+      nav ul{
+        margin-top:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      section{
+        padding:70px 20px;
+      }
+
+      .hero h2{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+
+    <h1>Adnan's Films & Photography</h1>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Wedding Plans</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- Hero Section -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-box">
+
+      <h2>Welcome To Adnan Fazal Photography</h2>
+
+      <p>
+        We provide the best wedding photography and cinematic videography services.
+        Specializing in Mehndi, Barat, and Walima shoots with creative poses,
+        luxury editing, and memorable cinematic movies.
+      </p>
+
+      <h2>Adnan's Films & Photography</h2>
+
+      <p>
+        Capturing luxury wedding memories, cinematic love stories,
+        and timeless moments with professional excellence.
+      </p>
+
+      <a href="#contact">
+        <button>Book Your Date</button>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Services -->
+
+  <section id="services">
+
+    <h2 class="section-title">Specialized Shoots</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <i class="fas fa-user"></i>
+        <h4>Solo Shoot</h4>
+        <p>Professional portraits & creative outdoor shoots.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-cake-candles"></i>
+        <h4>Birthday</h4>
+        <p>Capturing the joy of your special milestones.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-heart"></i>
+        <h4>Couple Shoot</h4>
+        <p>Romantic pre-wedding and anniversary sessions.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-ring"></i>
+        <h4>Engagement</h4>
+        <p>The beginning of your forever, captured beautifully.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-camera-retro"></i>
+        <h4>Model Shoot</h4>
+        <p>High-end fashion and portfolio photography.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Videos -->
+
+  <section id="videos" style="background:#f4f4f4;">
+
+    <h2 class="section-title">Cinematic Films</h2>
+
+    <div class="video-container">
+
+      <div class="video-wrapper">
+
+        <video controls>
+
+          <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4">
+
+        </video>
+
+      </div>
+
+      <div class="video-wrapper">
+
+        <video controls>
+
+          <source
+          src="https://www.w3schools.com/html/movie.mp4"
+          type="video/mp4">
+
+        </video>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Packages -->
+
+  <section id="packages">
+
+    <h2 class="section-title">Wedding Packages</h2>
+
+    <div class="pricing-container">
+
+      <!-- Silver -->
+
+      <div class="package-card">
+
+        <h3>Silver Package</h3>
+
+        <span class="price-tag">
+          50k / 100k / 150k
+        </span>
+
+        <ul class="package-details">
+
+          <li><i class="fas fa-check-circle"></i> 1 Photographer</li>
+
+          <li><i class="fas fa-check-circle"></i> 1 Videographer</li>
+
+          <li><i class="fas fa-check-circle"></i> 1 Indian Album</li>
+
+          <li><i class="fas fa-check-circle"></i> Video Editing</li>
+
+          <li><i class="fas fa-check-circle"></i> Softcopy Raw Data</li>
+
+          <li><i class="fas fa-check-circle"></i> 1 Pendrive</li>
+
+        </ul>
+
+      </div>
+
+      <!-- Gold -->
+
+      <div class="package-card">
+
+        <h3>Gold Package</h3>
+
+        <span class="price-tag">
+          70k / 140k / 210k
+        </span>
+
+        <ul class="package-details">
+
+          <li><i class="fas fa-check-circle"></i> 2 Photographers</li>
+
+          <li><i class="fas fa-check-circle"></i> 1 Videographer</li>
+
+          <li><i class="fas fa-check-circle"></i> Barat Drone</li>
+
+          <li><i class="fas fa-check-circle"></i> 3 Indian Albums</li>
+
+          <li><i class="fas fa-check-circle"></i> 1 Large Frame</li>
+
+          <li><i class="fas fa-check-circle"></i> Mixing & Editing</li>
+
+        </ul>
+
+      </div>
+
+      <!-- Platinum -->
+
+      <div class="package-card">
+
+        <h3>Platinum Package</h3>
+
+        <span class="price-tag">
+          95k / 190k / 285k
+        </span>
+
+        <ul class="package-details">
+
+          <li><i class="fas fa-check-circle"></i> 2 Photographers</li>
+
+          <li><i class="fas fa-check-circle"></i> 2 Videographers</li>
+
+          <li><i class="fas fa-check-circle"></i> Professional Drone</li>
+
+          <li><i class="fas fa-check-circle"></i> 3 Crystal Albums</li>
+
+          <li><i class="fas fa-check-circle"></i> Full Cinematic Work</li>
+
+          <li><i class="fas fa-check-circle"></i> Harddrive + Pendrives</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Gallery -->
+
+  <section id="work">
+
+    <h2 class="section-title">Photo Gallery</h2>
+
+    <div class="gallery">
+
+      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800">
+
+      <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?q=80&w=800">
+
+      <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800">
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+
+  <section class="contact-section" id="contact">
+
+    <h2 class="section-title" style="color:#ff7b00;">
+      Get In Touch
+    </h2>
+
+    <div class="contact-info">
+
+      <p>
+        <i class="fas fa-phone-alt"></i>
+        +92 324 6860258
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        Adnanstudiomb@gmail.com
+      </p>
+
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        Mandi Bahauddin, Punjab, Pakistan
+      </p>
+
+    </div>
+
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/adnansphotographyofficial"
+      target="_blank"
+      class="instagram">
+
+        <i class="fab fa-instagram"></i>
+
+      </a>
+
+      <a href="https://www.facebook.com/danijutt@yahoo.com"
+      target="_blank"
+      class="facebook">
+
+        <i class="fab fa-facebook"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    © 2026 Adnan Fazal Photography | All Rights Reserved
+
+  </footer>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    console.log("Adnan Fazal Photography Website Loaded Successfully");
+
+  </script>
+
+</body>
+</html>
